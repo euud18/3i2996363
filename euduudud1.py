@@ -7,8 +7,14 @@ if s1 == 1:
   HEADERS = {
     'Accept': 'application/json, text/plain, */*'
   }
-  req = requests.get(URL, HEADERS).json()
-  print(req)
+  r = requests.get(URL, HEADERS)
+  data = r.json()
+  DeezerId = data['id']
+  upc = data['upc']
+  title = data['title']
+  Link = data['link']
+  print(f'DEEZERID: {DeezerId}\n UPC: {upc} \nLink: {Link}')
+
 if s1 == 2:
   s11 = input ('Введи UPC: ')
   URL = f'https://api.deezer.com/track/upc:{s11}'
