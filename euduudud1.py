@@ -1,4 +1,4 @@
-import request 
+import requests
 print('1 - Проверить альбом по UPC\n2 - Проверить трек по upc')
 s1 = int(input ('Выбери вариант: '))
 if s1 == 1:
@@ -7,5 +7,5 @@ if s1 == 1:
   HEADERS = {
     'Accept': 'application/json, text/plain, */*'
   }
-  req = request.get(URL, HEADERS).json()
+  req = requests.get(URL, HEADERS).json()
   print(req)
